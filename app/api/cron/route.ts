@@ -6,7 +6,7 @@ import Product from "@/lib/models/product.model";
 import { scrapeAmazonProduct } from "@/lib/scraper";
 import { generateEmailBody, sendEmail } from "@/lib/nodemailer";
 
-export const maxDuration = 300; // This function can run for a maximum of 300 seconds
+export const maxDuration = 30; // This function can run for a maximum of 300 seconds
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
@@ -24,7 +24,7 @@ export async function GET(request: Request) {
         // Scrape product
         const scrapedProduct = await scrapeAmazonProduct(currentProduct.url);
 
-        if (!scrapedProduct) return;
+        if (!scrapedProduct) throw new Error("No Product found");
 
         const updatedPriceHistory = [
           ...currentProduct.priceHistory,
@@ -44,7 +44,7 @@ export async function GET(request: Request) {
         // Update Products in DB
         const updatedProduct = await Product.findOneAndUpdate(
           {
-            url: product.url,
+            url: Product.url,
           },
           product
         );

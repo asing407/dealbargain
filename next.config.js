@@ -6,7 +6,14 @@ const nextConfig = {
   },
   images: {
     domains: ['m.media-amazon.com']
+  },
+  serverless: {
+    functions: {
+      'api/cron': {
+        maxDuration: 30
+      }
+    }
   }
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;
