@@ -44,7 +44,7 @@ export async function GET(request: Request) {
         // Update Products in DB
         const updatedProduct = await Product.findOneAndUpdate(
           {
-            url: Product.url,
+            url: product.url,
           },
           product
         );
