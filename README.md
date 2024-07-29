@@ -21,5 +21,5 @@ DealBargain is a web application that provides users with the best deals on Amaz
 5. BrightData's API credentials
 6. Amazon API credentials (optional)
 
-**Vercel Deployment WebPage : "https://dealbargain.vercel.app"**
+**Vercel Deployment WebPage : https://dealbargain.vercel.app**
 
