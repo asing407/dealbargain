@@ -23,3 +23,7 @@ DealBargain is a web application that provides users with the best deals on Amaz
 
 **Vercel Deployment WebPage : https://dealbargain.vercel.app**
 
+
+
+https://github.com/user-attachments/assets/b93e29ba-c37d-4155-8087-69020111cb48
+
